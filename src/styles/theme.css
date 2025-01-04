@@ -1,0 +1,23 @@
+/* Default light theme */
+:root {
+    --bs-body-bg: #ffffff;
+    --bs-body-color: #212529;
+    --tj-theme-primary: #8750f7;
+    --tj-theme-secondary: #c9bfdd;
+    --tj-theme-accent-1: #cdc5d3;
+    --tj-white: #110b0b;
+    --text-light: #fff;
+    --nav-bg: rgb(192, 179, 206);
+}
+
+/* Dark theme */
+.dark {
+    --bs-body-bg: #212529;
+    --bs-body-color: #f8f9fa;
+    --tj-theme-primary: #8750f7;
+    --tj-theme-secondary: #2a1454;
+    --tj-theme-accent-1: #0f0715;
+    --tj-white: #ffffff;
+    --text-light: #333;
+    --nav-bg: rgb(50, 30, 70);
+}

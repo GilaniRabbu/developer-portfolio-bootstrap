@@ -1,0 +1,163 @@
+.portfolio-item {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.portfolio-content {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover .project-image {
+    transform: scale(1.05);
+}
+
+.image-container:hover .visit-overlay {
+    opacity: 1;
+}
+
+.visit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.visit-btn {
+    padding: 12px 36px;
+    font-size: 1.2rem;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.visit-btn:hover {
+    background: white;
+    color: black;
+}
+
+.portfolio-details {
+    padding: 24px;
+    color: #e5e5e5;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.project-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.tag {
+    padding: 4px 12px;
+    background: #333;
+    border-radius: 16px;
+    font-size: 0.9rem;
+}
+
+.project-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #a1a1a1;
+}
+
+.tech-stack {
+    margin-bottom: 24px;
+}
+
+.tech-stack p {
+    margin: 8px 0;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+.action-btn.link {
+    background: #333;
+    color: white;
+}
+
+.action-btn.client,
+.action-btn.server {
+    background: #2a2a2a;
+    color: white;
+}
+
+.action-btn:hover {
+    background: #444;
+}
+
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .button-group {
+        width: 100%;
+    }
+
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,162 @@
+@import url("https://api.fontshare.com/v2/css?f[]=bonny@100,300,400,500,700&f[]=pilcrow-rounded@400,500,600,700,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--tj-theme-primary) var(--tj-theme-secondary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--tj-theme-accent-1);
+  color: var(--bs-body-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+img {
+  max-width: 100%;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+
+
+/* Define font weight utility classes */
+.sora-100 {
+  font-family: "Sora", serif;
+  font-weight: 100;
+}
+
+.sora-200 {
+  font-family: "Sora", serif;
+  font-weight: 200;
+}
+
+.sora-300 {
+  font-family: "Sora", serif;
+  font-weight: 300;
+}
+
+.sora-400 {
+  font-family: "Sora", serif;
+  font-weight: 400;
+}
+
+.sora-500 {
+  font-family: "Sora", serif;
+  font-weight: 500;
+}
+
+.sora-600 {
+  font-family: "Sora", serif;
+  font-weight: 600;
+}
+
+.sora-700 {
+  font-family: "Sora", serif;
+  font-weight: 700;
+}
+
+.sora-800 {
+  font-family: "Sora", serif;
+  font-weight: 800;
+}
+
+.font-bonny-thin {
+  font-family: "Bonny", serif;
+  font-weight: 100;
+}
+
+.font-bonny-light {
+  font-family: "Bonny", serif;
+  font-weight: 300;
+}
+
+.font-bonny-regular {
+  font-family: "Bonny", serif;
+  font-weight: 400;
+}
+
+.font-bonny-medium {
+  font-family: "Bonny", serif;
+  font-weight: 500;
+}
+
+.font-bonny-bold {
+  font-family: "Bonny", serif;
+  font-weight: 700;
+}
+
+.site-content {
+  overflow: hidden;
+}
+
+
+
+.tape-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  overflow-x: clip;
+}
+
+@media (min-width: 1024px) {
+  .tape-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.tape-container {
+  background-image: linear-gradient(to right, #6ee7b7, #38bdf8);
+  transform: rotate(-3deg);
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+
+.tape-mask {
+  display: flex;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.tape-grid {
+  display: flex;
+  flex: none;
+  gap: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  animation: move-left 36s linear infinite;
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.rotate-anime {
+  animation: rotate-star 10s linear infinite;
+}
+
+@keyframes rotate-star {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,64 @@
+/* Background for the Section */
+.services-section {
+    background-color: var(--tj-white);
+}
+
+/* Service Card Styling */
+.service-card {
+    transition: transform 0.3s ease-in-out;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Icon Styling */
+.icon {
+    color: #6c63ff;
+    /* Purple icon color */
+}
+
+/* Typography */
+h2 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* For "OFFERED SERVICES" text */
+.text-muted {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Spacing */
+@media (max-width: 575.98px) {
+    .service-card {
+        padding: 1.25rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .service-card {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .service-card {
+        padding: 2.5rem;
+    }
+}
