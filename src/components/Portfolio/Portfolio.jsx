@@ -1,26 +1,31 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Portfolio.css"; // For custom hover styles
+import { FaGithub, FaLink, FaServer } from "react-icons/fa";
+import "./Portfolio.css";
 
 const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "AnimeFig",
-      stack: "Full-Stack",
+      title: "FurStore",
+      stack: "Full Stack",
       image: "./profile.png",
       description:
         "AnimeFig is an anime figurine buying website. It allows users to view and buy anime figurines. It is a full stack web application built with React.js, Node.js, Express.js, MongoDB, and Firebase.",
-      frontend: "React.js, Vite, TailwindCSS, react-router",
-      backend: "Node.js, Express.js, MongoDB, Mongoose, Firebase",
+      frontend: "Next.js, Typescript, Bootstrap",
+      backend: "Node.js, Express.js, MongoDB, Mongoose",
       link: "#",
+      iconLink: <FaLink />,
+      iconGit: <FaGithub />,
+      iconServer: <FaServer />,
     },
   ];
 
   return (
     <section className="my-5">
       <div className="container">
-        <h2 className="text-center mb-4">Recent Work</h2>
+        <h2 className="text-center mb-4 section-title font-bonny-bold">
+          Recent Work
+        </h2>
         <div className="row g-4">
           {projects.map((project) => (
             <div className="col-md-6" key={project.id}>
@@ -29,7 +34,7 @@ const Portfolio = () => {
                   <div className="image-container">
                     <img
                       src={project.image}
-                      alt="AnimeFig Project"
+                      alt={project.title}
                       className="project-image"
                     />
                     <div className="visit-overlay">
@@ -41,31 +46,32 @@ const Portfolio = () => {
                   </div>
 
                   <div className="portfolio-details">
-                    <div className="project-header">
-                      <h2>{project.title}</h2>
-                      <span className="tag">{project.stack}</span>
-                    </div>
-
+                    <p className="project-tag mb-3">{project.stack}</p>
+                    <h2 className="project-title mb-4">{project.title}</h2>
                     <p className="project-description">{project.description}</p>
 
                     <div className="tech-stack">
-                      <p>{project.frontend}</p>
-                      <p>{project.backend}</p>
+                      <p className="stack-fr">
+                        <b>Frontend:</b> {project.frontend}
+                      </p>
+                      <p className="stack-be">
+                        <b>Backend:</b> {project.backend}
+                      </p>
                     </div>
 
                     <div className="action-buttons">
                       <button className="action-btn link">
-                        <span className="icon">🔗</span>
-                        Link
+                        <span className="icon">{project.iconLink}</span>
+                        <span className="">Link</span>
                       </button>
                       <div className="button-group">
                         <button className="action-btn client">
-                          <span className="icon">💻</span>
-                          Client
+                          <span className="icon">{project.iconGit}</span>
+                          <span className="">Client</span>
                         </button>
                         <button className="action-btn server">
-                          <span className="icon">🖥️</span>
-                          Server
+                          <span className="icon">{project.iconServer}</span>
+                          <span className="">Server</span>
                         </button>
                       </div>
                     </div>

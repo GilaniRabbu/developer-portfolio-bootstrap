@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { MdOutlineWeb } from "react-icons/md";
+import "./Services.css";
 
 const Services = () => {
   const services = [
@@ -8,67 +10,45 @@ const Services = () => {
       title: "Web Design",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      icon: "fa-solid fa-wand-magic-sparkles",
+      icon: <MdOutlineWeb />,
     },
     {
       id: 2,
       title: "Product Design",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      icon: "fa-solid fa-cogs",
+      icon: <MdOutlineWeb />,
     },
     {
       id: 3,
       title: "UI UX Design",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      icon: "fa-solid fa-cube",
+      icon: <MdOutlineWeb />,
     },
     {
       id: 4,
       title: "Motion Graphic",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      icon: "fa-solid fa-film",
+      icon: <MdOutlineWeb />,
     },
   ];
 
   return (
-    <section className="services-section py-5 text-center">
+    <section className="py-5">
       <div className="container">
-        {/* Section Title */}
-        <h2 className="text-white mb-2">Services</h2>
-        <p className="text-muted mb-5">OFFERED SERVICES</p>
-
-        {/* Services Grid */}
-        <div className="row">
+        <h2 className="text-center mb-4 section-title font-bonny-bold">
+          Services
+        </h2>
+        <div className="row g-4">
           {services.map((service) => (
-            <div key={service.id} className="col-md-6 mb-4">
-              <motion.div
-                className="service-card p-4 rounded"
-                style={{
-                  border: "2px solid rgba(255, 255, 255, 0.2)",
-                  backgroundColor: "#1A1A2E",
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  borderColor: "#6C63FF",
-                  boxShadow: "0px 8px 20px rgba(108, 99, 255, 0.4)",
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* Service Icon */}
-                <div className="icon mb-3">
-                  <i
-                    className={`${service.icon} text-purple`}
-                    style={{ fontSize: "2.5rem" }}
-                  ></i>
-                </div>
-                {/* Service Title */}
-                <h5 className="text-white mb-3">{service.title}</h5>
-                {/* Service Description */}
-                <p className="text-muted">{service.description}</p>
-              </motion.div>
+            <div key={service.id} className="col-md-6">
+              <div className="service-card">
+                <div className="mb-4 service-icon">{service.icon}</div>
+                <h3 className="mb-3 service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
+              </div>
             </div>
           ))}
         </div>

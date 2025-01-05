@@ -1,0 +1,11 @@
+font-family: "Pilcrow Rounded", sans-serif;
+
+rem unit: font-size, padding, margin, gap;
+px unit: width, height, border-radius, border, letter-spacing, position prop.
+
+#232946
+#b8c1ec
+#d4d8f0
+#eebbc3
+#6ee7b7
+#38bdf8
