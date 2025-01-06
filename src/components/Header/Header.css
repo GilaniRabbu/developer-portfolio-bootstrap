@@ -26,6 +26,25 @@
   color: var(--tr-nav-text);
 }
 
+.nav-links .text-nav-be {
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-links .text-nav-be::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--tr-nav-text);
+  transition: width 0.3s ease;
+}
+
+.nav-links .text-nav-be:hover::after {
+  width: 100%;
+}
 
 
 
@@ -73,6 +92,8 @@
   position: relative;
   text-decoration: none;
   z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .social-icons li a::before {
@@ -82,9 +103,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--tr-theme-primary);
+  background: var(--tr-nav-bg-hover);
   transform: scale(0);
-  transition: 0.3s;
+  transition: all 0.3s ease;
   border-radius: 50%;
   z-index: -1;
 }
@@ -94,6 +115,14 @@
   border-color: var(--tr-nav-border);
 }
 
+.social-icons li a:hover::before {
+  transform: scale(1);
+}
+
+.social-icons li a:hover {
+  color: var(--tr-nav-text-hover);
+  border: none;
+}
 
 
 

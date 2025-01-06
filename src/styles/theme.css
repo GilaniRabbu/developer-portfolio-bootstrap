@@ -14,6 +14,8 @@
   --tr-nav-border: #2A1454;
   --tr-nav-mobile-bg: #FFFFFF;
   --tr-nav-mobile-text: #050709;
+  --tr-nav-bg-hover: #2A1454;
+  --tr-nav-text-hover: #FFFFFF;
 
   --tr-portfolio-bg: #F6F3FC;
   --tr-portfolio-border: #D9D9D9;
@@ -24,6 +26,9 @@
   --tr-service-icon: #8750F7;
   --tr-service-title: #8A54F7;
   --tr-service-description: #2A1454;
+
+  --tr-footer-bg: #2D1B69;
+  --tr-footer-text: #F5F2FB;
 }
 
 /* Dark theme */
@@ -42,6 +47,8 @@
   --tr-nav-border: #FFFFFF;
   --tr-nav-mobile-bg: #2A1454;
   --tr-nav-mobile-text: #F6F3FC;
+  --tr-nav-bg-hover: #FFFFFF;
+  --tr-nav-text-hover: #2A1454;
 
   --tr-portfolio-bg: #15091D;
   --tr-portfolio-border: #2A1454;
@@ -52,4 +59,7 @@
   --tr-service-icon: #8750F7;
   --tr-service-title: #FFFFFF;
   --tr-service-description: #FFFFFF;
+
+  --tr-footer-bg: #15091D;
+  --tr-footer-text: #F5F2FB;
 }

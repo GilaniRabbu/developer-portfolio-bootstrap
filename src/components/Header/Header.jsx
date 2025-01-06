@@ -66,19 +66,21 @@ const Header = () => {
                 <img src="./logo.png" alt="Admin Logo" className="w-100" />
               </a>
             </div>
+
             <div className="d-none d-lg-inline-flex">
-              <nav className="d-flex gap-4 align-items-center">
+              <nav className="d-flex gap-4 align-items-center position-relative nav-links">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
-                    className="position-relative text-decoration-none text-nav"
+                    className="text-decoration-none text-nav text-nav-be"
                   >
                     {link.name}
                   </a>
                 ))}
               </nav>
             </div>
+
             <div className="d-none d-lg-inline-flex">
               <ul className="social-icons ul-reset">
                 {socialLinks.map((link) => (
@@ -88,6 +90,7 @@ const Header = () => {
                 ))}
               </ul>
             </div>
+
             <div className="menu-bar d-lg-none">
               <button
                 class={`hamburger hamburger--emphatic-r ${
@@ -101,6 +104,7 @@ const Header = () => {
                 </span>
               </button>
             </div>
+
             <div
               className={`header-menu d-lg-none ${
                 menuOpen ? "menu-open" : ""

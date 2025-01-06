@@ -6,6 +6,7 @@ import TapeSection from "./components/TapeSection/TapeSection";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Services from "./components/Services/Services";
 import Skills from "./components/Skills/Skills";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Portfolio />
         <Services />
         <Skills />
+        <Footer />
       </main>
     </div>
   );
