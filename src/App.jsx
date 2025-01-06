@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import TapeSection from "./components/TapeSection/TapeSection";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Services from "./components/Services/Services";
+import Skills from "./components/Skills/Skills";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <TapeSection />
         <Portfolio />
         <Services />
+        <Skills />
       </main>
     </div>
   );

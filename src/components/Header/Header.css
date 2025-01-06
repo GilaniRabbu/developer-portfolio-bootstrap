@@ -1,137 +1,137 @@
 .header-area {
-    padding: 1.25rem 0;
-    position: relative;
-    z-index: 9;
+  padding: 1.25rem 0;
+  position: relative;
+  z-index: 9;
 }
 
 .header-area.header-absolute {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 99;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .header-area {
-        padding: 1.25rem 0 1rem;
-    }
+  .header-area {
+    padding: 1.25rem 0 1rem;
+  }
 }
 
 .bg-header {
-    background-color: var(--tr-nav-bg);
+  background-color: var(--tr-nav-bg);
 }
 
 .text-nav {
-    color: var(--tr-nav-text);
+  color: var(--tr-nav-text);
 }
 
 
 
 
 .header-area.header-3 .logo-box {
-    max-width: 60px;
-    width: 100%;
-    margin-right: 0;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 0;
 }
 
 .header-area .logo-box {
-    max-width: 60px;
-    width: 100%;
-    margin-right: 2.25rem;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 2.25rem;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .header-area .logo-box {
-        margin-right: 1rem;
-    }
+  .header-area .logo-box {
+    margin-right: 1rem;
+  }
 }
 
 
 
 
 .social-icons {
-    display: flex;
-    gap: 1.25rem;
+  display: flex;
+  gap: 1.25rem;
 }
 
 .ul-reset {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .social-icons li a {
-    color: var(--tr-theme-primary);
-    width: 35px;
-    height: 35px;
-    border: 1px solid var(--tr-theme-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    text-decoration: none;
-    z-index: 1;
+  color: var(--tr-theme-primary);
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--tr-theme-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
 }
 
 .social-icons li a::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--tr-theme-primary);
-    transform: scale(0);
-    transition: 0.3s;
-    border-radius: 50%;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--tr-theme-primary);
+  transform: scale(0);
+  transition: 0.3s;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .social-icons li a {
-    color: var(--tr-nav-text);
-    border-color: var(--tr-nav-border);
+  color: var(--tr-nav-text);
+  border-color: var(--tr-nav-border);
 }
 
 
 
 
 .header-menu {
-    position: fixed;
-    left: 0;
-    top: 96px;
-    width: 100%;
-    min-height: 90vh;
-    color: var(--tr-nav-mobile-text);
-    background-color: var(--tr-nav-mobile-bg);
-    overflow: hidden;
-    transform-origin: top;
-    transform: scaleY(0);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0s 0.4s;
-    z-index: -1;
+  position: fixed;
+  left: 0;
+  top: 96px;
+  width: 100%;
+  min-height: 90vh;
+  color: var(--tr-nav-mobile-text);
+  background-color: var(--tr-nav-mobile-bg);
+  overflow: hidden;
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0s 0.4s;
+  z-index: -1;
 }
 
 .header-menu.menu-open {
-    transform: scaleY(1);
-    opacity: 1;
-    visibility: visible;
-    z-index: 10;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0s 0s;
+  transform: scaleY(1);
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0s 0s;
 }
 
 .header-menu.menu-closing {
-    transform: scaleY(0);
-    opacity: 0;
-    visibility: hidden;
-    z-index: -1;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0s 0.4s;
+  transform: scaleY(0);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0s 0.4s;
 }
 
 @media (max-width: 991px) {
-    .header-menu {
-        display: block;
-    }
+  .header-menu {
+    display: block;
+  }
 }
