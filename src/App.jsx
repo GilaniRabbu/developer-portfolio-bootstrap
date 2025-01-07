@@ -7,6 +7,7 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Services from "./components/Services/Services";
 import Skills from "./components/Skills/Skills";
 import Footer from "./components/Footer/Footer";
+import Timeline from "./components/Timeline/Timeline";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <TapeSection />
         <Portfolio />
         <Services />
+        <Timeline />
         <Skills />
         <Footer />
       </main>

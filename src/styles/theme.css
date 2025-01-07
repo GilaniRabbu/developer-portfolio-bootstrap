@@ -27,6 +27,11 @@
   --tr-service-title: #8A54F7;
   --tr-service-description: #2A1454;
 
+  --tr-timeline-line: #15091D;
+  --tr-timeline-line-bg: rgba(20, 10, 30, 0.25);
+  --tr-timeline-title: #2A1454;
+  --tr-timeline-para: #050709;
+
   --tr-footer-bg: #2D1B69;
   --tr-footer-text: #F5F2FB;
 }
@@ -59,6 +64,11 @@
   --tr-service-icon: #8750F7;
   --tr-service-title: #FFFFFF;
   --tr-service-description: #FFFFFF;
+
+  --tr-timeline-line: #8750F7;
+  --tr-timeline-line-bg: rgba(135, 80, 245, 0.25);
+  --tr-timeline-title: #8750F7;
+  --tr-timeline-para: #F6F3FC;
 
   --tr-footer-bg: #15091D;
   --tr-footer-text: #F5F2FB;
