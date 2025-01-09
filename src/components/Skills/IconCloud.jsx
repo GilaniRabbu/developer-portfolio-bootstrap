@@ -1,146 +1,92 @@
-import React, { useRef, useEffect } from "react";
-import { Cloud } from "react-icon-cloud";
-import { useIcons } from "./../../hooks/useIcons";
+import { useEffect, useMemo, useState } from "react";
+import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
+import { useTheme } from "../../contexts/ThemeContext";
 
-const defaultSlugs = [
-  "react",
-  "typescript",
-  "javascript",
-  "jquery",
-  "nodejs",
-  "nextdotjs",
-  "php",
-  "vercel",
-  "netlify",
-  "github",
-  "git",
-  "visualstudiocode",
-  "tailwindcss",
-  "bootstrap",
-  "css3",
-  "html5",
-  "mongodb",
-  "figma",
-  "firebase",
-];
+export const cloudProps = {
+  containerProps: {
+    style: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "100%",
+      paddingTop: 40,
+    },
+  },
+  options: {
+    reverse: true,
+    depth: 1,
+    wheelZoom: false,
+    imageScale: 2,
+    activeCursor: "pointer",
+    tooltip: "native",
+    initial: [0.1, -0.1],
+    clickToFront: 500,
+    tooltipDelay: 0,
+    maxSpeed: 0.04,
+    outlineColour: "#0066FF",
+    minSpeed: 0.02,
+  },
+};
 
-export function IconCloud({
-  containerProps,
-  canvasWidth = 560,
-  iconSize = 88,
-  freezeActive = false,
-  clickToFront = true,
-  tooltipDelay = 0,
+export const renderCustomIcon = (icon, theme, imageArray) => {
+  const bgHex = theme === "light" ? "#F3F2EF" : "#080510";
+  const fallbackHex = theme === "light" ? "#6E6E73" : "#FFFFFF";
+  const minContrastRatio = theme === "dark" ? 2 : 1.2;
+
+  return renderSimpleIcon({
+    icon,
+    bgHex,
+    fallbackHex,
+    minContrastRatio,
+    size: 42,
+    aProps: {
+      href: undefined,
+      target: undefined,
+      rel: undefined,
+      onClick: (e) => e.preventDefault(),
+    },
+  });
+};
+
+export default function IconCloud({
+  // Default to an empty array if not provided
+  iconSlugs = [],
+
+  imageArray,
 }) {
-  const { icons, loading, error } = useIcons(defaultSlugs, iconSize);
-  const cloudRef = useRef(null);
+  const [data, setData] = useState(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
-    if (!cloudRef.current || !window.TagCanvas) return;
+    if (iconSlugs.length > 0) {
+      // Check if iconSlugs is not empty
+      fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
+    }
+  }, [iconSlugs]);
 
-    let mouseX = 0;
-    let mouseY = 0;
-    let isMouseInside = false;
+  const renderedIcons = useMemo(() => {
+    if (!data) return null;
 
-    const handleMouseMove = (e) => {
-      if (!cloudRef.current || !isMouseInside) return;
-
-      const rect = cloudRef.current.getBoundingClientRect();
-      mouseX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-      mouseY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-      window.TagCanvas?.SetSpeed("myCanvas", [mouseX * 0.8, mouseY * 0.8]);
-    };
-
-    const handleMouseEnter = () => (isMouseInside = true);
-    const handleMouseLeave = () => {
-      isMouseInside = false;
-      window.TagCanvas?.SetSpeed("myCanvas", [0, 0]);
-    };
-
-    const container = cloudRef.current;
-    container.addEventListener("mousemove", handleMouseMove);
-    container.addEventListener("mouseenter", handleMouseEnter);
-    container.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      container.removeEventListener("mousemove", handleMouseMove);
-      container.removeEventListener("mouseenter", handleMouseEnter);
-      container.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
-
-  if (error) {
-    return (
-      <div
-        style={{
-          padding: "1rem",
-          color: "#EF4444",
-          background: "#FEF2F2",
-          borderRadius: "6px",
-        }}
-      >
-        Error loading icons: {error}
-      </div>
+    return Object.values(data.simpleIcons).map((icon) =>
+      renderCustomIcon(icon, theme)
     );
-  }
-
-  if (loading) {
-    return (
-      <div className="d-flex p-4 align-items-center justify-content-center">
-        <div
-          className="animate-spin border-black"
-          style={{
-            borderRadius: "50%",
-            height: "32px",
-            width: "32px",
-            borderBottomWidth: "2px",
-          }}
-        />
-      </div>
-    );
-  }
+  }, [data, theme]);
 
   return (
-    <div
-      ref={cloudRef}
-      {...containerProps}
-      className={`py-3 px-1 ${containerProps?.className || ""}`}
-    >
-      <Cloud
-        id="myCanvas"
-        containerProps={{
-          style: {
-            width: "100%",
-            height: "auto",
-            maxWidth: canvasWidth,
-            aspectRatio: "16 / 9",
-          },
-        }}
-        options={{
-          freezeActive,
-          clickToFront,
-          tooltipDelay,
-          initial: [0.1, -0.1],
-          wheelZoom: false,
-          fadeIn: 1000,
-          shape: "sphere",
-          noSelect: true,
-          shuffleTags: true,
-          reverse: true,
-          depth: 1,
-          maxSpeed: 0.05,
-          minSpeed: 0.02,
-          decel: 0.95,
-          interval: 20,
-          radiusX: 0.8,
-          radiusY: 0.8,
-          radiusZ: 0.8,
-          stretchX: 1.2,
-          stretchY: 1.2,
-        }}
-      >
-        {icons}
-      </Cloud>
-    </div>
+    // @ts-ignore
+    <Cloud {...cloudProps}>
+      <>
+        {renderedIcons}
+        {imageArray &&
+          imageArray.length > 0 &&
+          imageArray.map((image, index) => {
+            return (
+              <a key={index} href="#" onClick={(e) => e.preventDefault()}>
+                <img height="42" width="42" alt="A Globe" src={image} />
+              </a>
+            );
+          })}
+      </>
+    </Cloud>
   );
 }

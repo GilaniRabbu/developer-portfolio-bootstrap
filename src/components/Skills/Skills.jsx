@@ -1,6 +1,5 @@
 import React from "react";
-import { IconCloud } from "./IconCloud";
-import "./Skills.css";
+import IconSlugs from "./IconSlugs";
 
 const Skills = () => {
   return (
@@ -9,15 +8,8 @@ const Skills = () => {
         <h2 className="text-center mb-4 section-title font-bonny-bold">
           Skills Of Mine
         </h2>
-        <div className="position-relative w-100 justify-content-center mx-auto d-flex">
-          <IconCloud
-            containerProps={{
-              className: "bg-transparent mx-auto cursor",
-            }}
-            style={{ maxWidth: "560px;" }}
-            canvasWidth={560}
-            iconSize={88}
-          />
+        <div className="d-flex justify-content-center align-items-center">
+          <IconSlugs />
         </div>
       </div>
     </section>
