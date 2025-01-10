@@ -32,6 +32,12 @@
   --tr-timeline-title: #2A1454;
   --tr-timeline-para: #050709;
 
+  --tr-contact-text: #050709;
+  --tr-contact-form-bg: #15091D;
+  --tr-contact-form-text: #F6F3FC;
+  --tr-contact-form-input-bg: #F6F3FC;
+  --tr-contact-form-input-text: #15091D;
+
   --tr-footer-bg: #2D1B69;
   --tr-footer-text: #F5F2FB;
 }
@@ -69,6 +75,12 @@
   --tr-timeline-line-bg: rgba(135, 80, 245, 0.25);
   --tr-timeline-title: #8750F7;
   --tr-timeline-para: #F6F3FC;
+
+  --tr-contact-text: #F6F3FC;
+  --tr-contact-form-bg: #F6F3FC;
+  --tr-contact-form-text: #15091D;
+  --tr-contact-form-input-bg: #15091D;
+  --tr-contact-form-input-text: #F6F3FC;
 
   --tr-footer-bg: #15091D;
   --tr-footer-text: #F5F2FB;

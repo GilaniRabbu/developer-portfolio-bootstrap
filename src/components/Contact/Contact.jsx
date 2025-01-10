@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { FaAddressCard, FaAt } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
@@ -31,7 +30,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-5">
+    <section className="py-5 contact-section">
       <div className="container">
         <h2 className="section-title mb-5 text-center font-bonny-bold">
           Contact Me.
@@ -41,28 +40,57 @@ const Contact = () => {
             <h2 className="w-75 mb-4 font-bonny-regular">
               I am always here to assist you and respond to your inquiries
             </h2>
-            <p className="mb-4">
+            <p className="mb-5 contact-desc">
               Whether you have questions, need assistance, or simply want to
               share your thoughts, I am eager to hear from you. Feel free to
               connect with me through any of the methods below, and I will get
               back to you promptly. I look forward to hearing from you!
             </p>
-            <div className="contact-info-item">
-              <div className="info-item">
-                <FaAddressCard className="info-icon" />
-              </div>
-              <div>
+            <div className="d-flex flex-wrap justify-content-between gap-2 mb-5">
+              <div className="contact-info-item">
                 <h3>Location</h3>
                 <p>Dhaka, South Khilgaon</p>
               </div>
-            </div>
-            <div className="contact-info-item">
-              <div className="info-item">
-                <FaAt className="info-icon" />
-              </div>
-              <div>
+              <div className="contact-info-item">
                 <h3>E-mail</h3>
                 <p>toufiqjilanirabbu7@gmail.com</p>
+              </div>
+            </div>
+            <div>
+              <h3 className="mb-2 social-network-title">Social Network</h3>
+              <div className="d-flex gap-2 social-network">
+                <a
+                  href="https://www.facebook.com/GilaniRabbu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none"
+                >
+                  f
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none"
+                >
+                  x
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/toufiq-gilani-rabbu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none"
+                >
+                  in
+                </a>
+                <a
+                  href="https://github.com/GilaniRabbu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none"
+                >
+                  g
+                </a>
               </div>
             </div>
           </div>
