@@ -1,0 +1,46 @@
+.orbit {
+  width: 300px;
+  height: 300px;
+}
+
+.middle-orbit {
+  inset: 40px;
+}
+
+.inner-orbit {
+  inset: 80px;
+}
+
+.orbit-icon {
+  font-size: 1.5rem;
+}
+
+.orbit-title {
+  font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  .orbit {
+    width: 500px;
+    height: 500px;
+  }
+
+  .orbit-icon {
+    font-size: 2rem;
+  }
+
+  .orbit-title {
+    font-size: 5rem;
+  }
+}
+
+.acc-menu {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  padding: 0.25rem 0 0.75rem;
+}
+
+.acc-close {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
